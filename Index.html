@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Clínica FEMMA — Saúde da Mulher</title>
+  <meta name="description" content="Ginecologia, Obstetrícia e cuidado integral com estética premium e atendimento humanizado." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="visually-hidden" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="header" role="banner">
+    <div class="container nav">
+      <a class="logo" href="#top" aria-label="Início">
+        <div class="logo__circle">
+          <!-- troque por sua logo -->
+          <img src="logoof.jpg" alt="Logo Clínica FEMMA" class="logo__img">
+        </div>
+        <span>Clínica <b>FEMMA</b></span>
+      </a>
+
+      <button class="hamb" id="hamb" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="hamb__bg" aria-hidden="true"></span>
+        <span class="hamb__bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav__links" id="menu" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#about">Quem somos</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#equipe">Profissionais</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="h-hero">
+      <div class="container hero__wrap">
+        <div>
+          <h1 id="h-hero">Elegância, ciência e acolhimento em cada consulta.</h1>
+          <p class="hero__lead">Cuidado integral com tecnologia, privacidade e uma experiência pensada para mulheres.</p>
+        </div>
+        <figure class="hero__media" aria-label="Ambiente da clínica">
+          <img src="Faixada Femma.webp" alt="Sala de atendimento feminina com iluminação suave" loading="eager" fetchpriority="high">
+        </figure>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="section" aria-labelledby="h-serv">
+      <div class="container">
+        <h2 id="h-serv">Serviços da Clínica</h2>
+        <p class="muted">Atendimento completo e integrado nas principais necessidades da saúde feminina.</p>
+        <div class="services" role="list">
+          <article class="service" role="listitem">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="#b9921a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.5"/><path d="M12 10.5v10M8.5 14H15.5M9 20.5h6"/></g></svg>
+            <div><h3>Ginecologia Clínica</h3><p>Consulta, preventivo, saúde sexual e reprodutiva, climatério, DIU.</p></div>
+          </article>
+          <article class="service" role="listitem">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="#b9921a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c4.4 0 7.5 3.9 6.7 8.2-.4 2.2-2.3 4.3-3.9 5.8-1 .9-2.6 .9-3.6 0-1.6-1.5-3.5-3.6-3.9-5.8C6.5 6.9 9.6 3 12 3z"/><circle cx="12.5" cy="12" r="1.8"/></g></svg>
+            <div><h3>Obstetrícia</h3><p>Pré-natal, planejamento gestacional, orientações de parto e puerpério.</p></div>
+          </article>
+          <article class="service" role="listitem">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="#b9921a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c2 0 2.5 1.6 5 1.6S15 3 17 3c2 0 4 2.4 4 4.6 0 3.7-2.2 6.2-3.5 9.2-.6 1.4-2.4 1.4-3 0l-1.5-3.5-1.5 3.5c-.6 1.4-2.4 1.4-3 0C5.2 13.8 3 11.3 3 7.6 3 5.4 5 3 7 3z"/><path d="M4 9h16"/></g></svg>
+            <div><h3>Ortodontia & OFM</h3><p>Correção funcional/estética dos maxilares e alinhamento ortodôntico.</p></div>
+          </article>
+          <article class="service" role="listitem">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="#b9921a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 5.5A4 4 0 0 1 16 7a4.5 4.5 0 0 1 1.5 8.7V19a2 2 0 0 1-2 2H11"/><path d="M11 21H9a2 2 0 0 1-2-2v-1.2A4.6 4.6 0 1 1 8.5 5.5"/></g></svg>
+            <div><h3>Neurologia & Psiquiatria</h3><p>Abordagem clínica integral da saúde mental e neurológica.</p></div>
+          </article>
+          <article class="service" role="listitem">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="#b9921a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12a6 6 0 0 1 12 0v2a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3z"/><path d="M15.5 8.5c1.7.6 3 2.2 3 3.5M5 12h-.5M19.5 12H20"/></g></svg>
+            <div><h3>Fonoaudiologia</h3><p>Comunicação, deglutição e terapia vocal com foco funcional.</p></div>
+          </article>
+          <article class="service" role="listitem">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="#b9921a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 3.9L18 9l-4.1 2.1L12 15l-1.9-3.9L6 9l4.1-2.1z"/><path d="M7 18c3.3 1.7 6.7 1.7 10 0"/></g></svg>
+            <div><h3>Harmonização Orofacial</h3><p>Protocolos faciais personalizados com segurança e naturalidade.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUEM SOMOS -->
+    <section id="about" class="section" aria-labelledby="h-about">
+      <div class="container about">
+        <div>
+          <h2 id="h-about">Quem somos</h2>
+          <p class="muted">A FEMMA é uma clínica multidisciplinar que combina ciência, tecnologia e sensibilidade para oferecer uma jornada de cuidado elegante e humana.</p>
+          <p>Nosso propósito é acompanhar a mulher em todas as fases da vida, com privacidade, acolhimento e protocolos atualizados — do preventivo ao pré-natal, da saúde mental à harmonia do sorriso.</p>
+        </div>
+        <figure class="carousel" role="region" aria-roledescription="carousel" aria-label="Galeria FEMMA" aria-live="polite">
+          <div class="carousel__track">
+            <div class="carousel__slide" data-index="0" aria-hidden="false">
+              <img src="recepção.jpg" alt="Recepção iluminada com tons claros e detalhes em dourado">
+            </div>
+            <div class="carousel__slide" data-index="1" aria-hidden="true">
+              <img src="sala de at.jpg" alt="Consultório confortável com poltrona e equipamentos modernos">
+            </div>
+            <div class="carousel__slide" data-index="2" aria-hidden="true">
+              <img src="odonto.jpg" alt="Corredor da clínica com luz natural e textura suave nas paredes">
+            </div>
+          </div>
+          <div class="carousel__dots" aria-hidden="true">
+            <button type="button" aria-current="true"></button>
+            <button type="button"></button>
+            <button type="button"></button>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="section" aria-labelledby="h-dep">
+      <div class="container">
+        <h2 id="h-dep">Depoimentos</h2>
+        <p class="muted">O que nossas pacientes dizem sobre a experiência na FEMMA.</p>
+
+        <figure class="testi" role="region" aria-roledescription="carousel" aria-label="Depoimentos de pacientes" aria-live="polite">
+          <div class="testi__viewport">
+            <!-- 1 -->
+            <blockquote class="testi__slide" aria-hidden="false">
+              <div class="stars" aria-label="5 de 5">
+                <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg>
+              </div>
+              <p class="testi__quote">“Desde a recepção até a consulta, tudo pensado com carinho. Saí segura e muito bem orientada.”</p>
+              <figcaption class="testi__meta">— Marina Alves</figcaption>
+            </blockquote>
+            <!-- 2 -->
+            <blockquote class="testi__slide" aria-hidden="true">
+              <div class="stars" aria-label="5 de 5">
+                <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg>
+              </div>
+              <p class="testi__quote">“Equipe atenciosa e ambiente impecável. O pré-natal foi leve e muito bem acompanhado.”</p>
+              <figcaption class="testi__meta">— Camila Rocha</figcaption>
+            </blockquote>
+            <!-- 3 -->
+            <blockquote class="testi__slide" aria-hidden="true">
+              <div class="stars" aria-label="5 de 5">
+                <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg>
+              </div>
+              <p class="testi__quote">“A consulta foi explicativa, sem pressa e com muita sensibilidade. Recomendo!”</p>
+              <figcaption class="testi__meta">— Juliana Martins</figcaption>
+            </blockquote>
+            <!-- 4 -->
+            <blockquote class="testi__slide" aria-hidden="true">
+              <div class="stars" aria-label="5 de 5">
+                <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg>
+              </div>
+              <p class="testi__quote">“Clínica linda e organizada. Marcação rápida pelo WhatsApp e zero atrasos.”</p>
+              <figcaption class="testi__meta">— Beatriz Lima</figcaption>
+            </blockquote>
+            <!-- 5 -->
+            <blockquote class="testi__slide" aria-hidden="true">
+              <div class="stars" aria-label="5 de 5">
+                <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.7.9-4.8 4.6 1.2 6.6L12 17.8 6 20.2l1.2-6.6L2.5 9l6.7-.9z"/></svg>
+              </div>
+              <p class="testi__quote">“Voltei a me sentir bem com meu corpo após o tratamento. Resultado natural e seguro.”</p>
+              <figcaption class="testi__meta">— Letícia Vieira</figcaption>
+            </blockquote>
+          </div>
+          <div class="testi__dots" aria-hidden="true">
+            <button type="button" aria-current="true"></button>
+            <button type="button"></button>
+            <button type="button"></button>
+            <button type="button"></button>
+            <button type="button"></button>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PROFISSIONAIS -->
+    <section id="equipe" class="section" aria-labelledby="h-equipe">
+      <div class="container">
+        <h2 id="h-equipe">Profissionais</h2>
+        <p class="muted">Equipe multidisciplinar com formações e registros atualizados.</p>
+
+        <div class="team" role="list">
+          <article class="pro-card" role="listitem">
+            <figure><img class="pro-photo" src="Fernanda.jpeg" alt="Foto da Dra. Fernanda Lopes" loading="lazy" width="176" height="176"></figure>
+            <div class="pro-meta"><b>Dra. Fernanda Lopes</b><small>Ginecologista e Obstetra</small><small>CRM-TO 4138 • RQE 2906</small></div>
+          </article>
+          <article class="pro-card" role="listitem">
+            <figure><img class="pro-photo" src="Isabela Barroso.jpeg" alt="Foto da Dra. Isabela Barroso" loading="lazy" width="176" height="176"></figure>
+            <div class="pro-meta"><b>Dra. Isabela Barroso</b><small>Ortodontia e Ortopedia Funcional dos Maxilares</small><small>CRO-TO 2156</small></div>
+          </article>
+          <article class="pro-card" role="listitem">
+            <figure><img class="pro-photo" src="Ana Vigínia.jpeg" alt="Foto da Dra. Ana Virgínia" loading="lazy" width="176" height="176"></figure>
+            <div class="pro-meta"><b>Dra. Ana Virgínia</b><small>Fonoaudióloga</small><small>CRFa 5-2516-6</small></div>
+          </article>
+          <article class="pro-card" role="listitem">
+            <figure><img class="pro-photo" src="Dianny 2.jpeg" alt="Foto da Dra. Dianny Shcmit" loading="lazy" width="176" height="176"></figure>
+            <div class="pro-meta"><b>Dra. Dianny Shcmit</b><small>Psiquiatra e Medicina da Família</small><small>CRM 4919 • RQE 3821</small></div>
+          </article>
+          <article class="pro-card" role="listitem">
+            <figure><img class="pro-photo" src="Rayane.jpeg" alt="Foto da Dra. Rayana Loren" loading="lazy" width="176" height="176"></figure>
+            <div class="pro-meta"><b>Dra. Rayana Loren</b><small>Neurologia Clínica</small><small>CRM 4920</small></div>
+          </article>
+          <article class="pro-card" role="listitem">
+            <figure><img class="pro-photo" src="Karine.jpeg" alt="Foto da Dra. Karina Tatim Furlam" loading="lazy" width="176" height="176"></figure>
+            <div class="pro-meta"><b>Dra. Karina Tatim Furlam</b><small>Harmonização Orofacial</small><small>CRO-TO 748</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" aria-labelledby="h-faq">
+      <div class="container faq">
+        <h2 id="h-faq">FAQ</h2>
+        <details><summary>Como faço para agendar?</summary><div class="ans">Envie uma mensagem no WhatsApp e nossa equipe retorna com os horários disponíveis.</div></details>
+        <details><summary>Atendem convênios?</summary><div class="ans">Consulte nossa recepção para confirmar o seu plano e coberturas.</div></details>
+      </div>
+    </section>
+
+
+    <section id="contato" class="section" aria-labelledby="h-contato">
+  <div class="container contato-grid">
+    <div class="contato-texto">
+      <h2 id="h-contato">Localização & Contato</h2>
+      <p class="muted">
+        Estamos preparadas para receber você com conforto e privacidade.  
+        Fale com a FEMMA e agende sua consulta.
+      </p>
+
+      <!-- Endereço -->
+      <address class="address-box">
+        <strong>Endereço:</strong><br>
+        Av. Amazonas, Qd 64, Lote 04, Sl 1, 2, 3 e 4 — Setor Central<br>
+        Gurupi - TO, 77403-030
+      </address>
+
+      <div class="map-cta">
+        <a class="btn btn-whats"
+           href="https://wa.me/556399992505?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20FEMMA."
+           target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+
+        <a class="btn btn-outline"
+           href="https://www.instagram.com/clinicafemma?igsh=cmFjZnB3cml2cXFw"
+           target="_blank" rel="noopener">Instagram</a>
+
+        <a class="btn btn-outline"
+           href="https://goo.gl/maps/MPZcdXHdEwoYH2mS8"
+           target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+    </div>
+
+    <!-- Mapa lateral -->
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.273188351428!2d-49.063787924915176!3d-11.726623688510664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x933c0c59d2ad63f1%3A0x77eaa95dd0cfb4d2!2sAv.%20Amazonas%2C%20Qd%2064%2C%20Lt%2004%2C%20St.%20Central%2C%20Gurupi%20-%20TO%2C%2077403-030!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+        loading="lazy"
+        allowfullscreen=""
+        referrerpolicy="no-referrer-when-downgrade"
+        aria-label="Localização da Clínica FEMMA no Google Maps">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container wrap">
+      <div class="wrap">
+        <p>© 2025 Clínica FEMMA — Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Botão flutuante do WhatsApp -->
+
+<a href="https://wa.me/556399992505?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20FEMMA."
+   class="btn-whats-float"
+   target="_blank"
+   rel="noopener"
+   aria-label="Agendar consulta pelo WhatsApp">
+   <svg class="icon-whats" viewBox="0 0 32 32" aria-hidden="true">
+     <path d="M16.04 2.4C8.5 2.4 2.4 8.52 2.4 16.07c0 2.44.64 4.75 1.86 6.82L2 30l7.37-2.24a13.49 13.49 0 0 0 6.67 1.77h.01c7.54 0 13.64-6.12 13.64-13.67 0-7.54-6.1-13.46-13.65-13.46zm7.98 19.22c-.34.95-1.97 1.82-2.77 1.94-.71.11-1.61.16-2.61-.16-.6-.19-1.36-.44-2.35-.86-4.13-1.77-6.8-5.91-7.01-6.18-.19-.27-1.67-2.22-1.67-4.23 0-2 .98-2.97 1.32-3.38.35-.41.76-.52 1.02-.52.27 0 .51.01.73.02.24.01.55-.09.87.66.34.82 1.16 2.83 1.26 3.04.1.22.17.48.03.75-.13.27-.2.43-.39.67-.19.24-.41.53-.59.72-.19.19-.39.41-.17.8.22.38.97 1.59 2.07 2.58 1.42 1.26 2.61 1.65 3 .1.38-.52.84-.66 1.38-.44.54.22 3.42 1.6 4 .75.58-.85 1.03-.99 1.54-.81.51.19 1.32.66 1.55.79.22.13.37.19.43.3.05.12.05.67-.29 1.63z"/>
+   </svg>
+   <span class="tooltip-whats">Agendar agora</span>
+</a>
+
+
+</body>
+</html>

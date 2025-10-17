@@ -1,0 +1,644 @@
+:root{
+  --bg:#ffffff; --ink:#1a1a1a; --muted:#6e6e6e;
+  --gold:#d4af37; --gold-2:#b88d2b; --line:#eee4cc;
+  --radius:14px; --radius-xl:22px; --shadow:0 14px 30px rgba(0,0,0,.07);
+  --container:min(92vw,1160px);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:400 16px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+img{max-width:100%;display:block;height:auto}
+h1,h2,h3{font-family:"Playfair Display",serif;color:#0f1012;line-height:1.15;margin:0 0 10px}
+p{margin:0 0 12px}
+.container{width:var(--container);margin:auto}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Links (sem roxo visited) */
+a{color:inherit;text-decoration:none}
+a:link,a:visited{color:#1a1a1a}
+a:hover{color:var(--gold)}
+
+/* Header fixo branco */
+.header{
+  position:sticky;top:0;z-index:50;background:#fff;
+  border-bottom:1px solid #efe7d7;box-shadow:0 1px 0 rgba(0,0,0,.02);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(20px,4.2vw,28px)}
+.logo b{color:var(--gold)}
+
+/* Logo circular dourada */
+.logo__circle {
+  width: 58px;           /* 🔼 aumente aqui (padrão era 42px) */
+  height: 58px;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg, #d4af37, #b88d2b, #d4af37);
+  border: 2px solid #e9dfc5;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.6), 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo__img {
+  width: 75%;             /* mantém a proporção da imagem interna */
+  height: 75%;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #fff; /* fundo branco dentro do círculo */
+}
+
+
+/* Desktop nav */
+.nav__links{display:flex;gap:1rem;align-items:center}
+.nav__links a{padding:.55rem .85rem;border-radius:999px;font-weight:700}
+.nav__links a:hover{background:#fcf8ef}
+
+/* Hambúrguer dourado */
+.hamb{display:none;position:relative;border:none;background:transparent;width:44px;height:38px;border-radius:12px;cursor:pointer}
+.hamb__bg{position:absolute;inset:0;border-radius:12px;background:linear-gradient(180deg,rgba(212,175,55,.22),rgba(212,175,55,.08));border:1px solid #eadfae}
+.hamb__bars,.hamb__bars::before,.hamb__bars::after{
+  position:absolute;left:50%;transform:translateX(-50%);content:"";width:22px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,#fff,#fff 40%,#f5e7b0 60%,#caa730 100%);box-shadow:0 0 10px rgba(212,175,55,.35);
+  transition:transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.hamb__bars{top:50%}.hamb__bars::before{top:-8px}.hamb__bars::after{top:8px}
+
+/* Hambúrguer -> X quando aberto */
+.hamb.is-open .hamb__bars{background:transparent; box-shadow:none}
+.hamb.is-open .hamb__bars::before{transform:translate(-50%,0) rotate(45deg); top:0;}
+.hamb.is-open .hamb__bars::after{transform:translate(-50%,0) rotate(-45deg); top:0;}
+
+/* Mobile menu – folha minimalista com dourado */
+@media (max-width:900px){
+  .hamb{display:block}
+
+  .nav__links{
+    position:fixed;
+    inset:72px 12px auto 12px;
+    z-index:60;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px) saturate(140%);
+    border:1px solid #eadfae;
+    border-radius:18px;
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+    padding:8px;
+    display:none;
+    flex-direction:column;
+    gap:0;
+    transform:translateY(-8px);
+    opacity:0;
+    transition:transform .25s ease, opacity .25s ease;
+  }
+  .nav__links.show{
+    display:flex;
+    transform:translateY(0);
+    opacity:1;
+  }
+  .nav__links a{
+    font-weight:800;
+    font-size:18px;
+    letter-spacing:.2px;
+    text-align:center;
+    padding:16px 12px;
+    border-radius:12px;
+  }
+  .nav__links a + a{border-top:1px dashed rgba(212,175,55,.35)}
+  .nav__links a:hover,
+  .nav__links a:focus-visible{
+    background:linear-gradient(180deg,#fffef8,#fff);
+    box-shadow:inset 0 0 0 1px rgba(234,223,174,.9);
+    color:#1a1a1a;
+  }
+
+  /* Overlay do fundo */
+  body.menu-open::before{
+    content:"";
+    position:fixed; inset:0;
+    background:rgba(0,0,0,.25);
+    backdrop-filter:blur(2px);
+    z-index:49; /* header é 50, menu 60 */
+  }
+}
+
+/* Botões (usados só no contato) */
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.78rem 1.05rem;border-radius:999px;text-decoration:none;font-weight:800;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
+.btn--gold{color:#1a1a1a;background:#fff;border:1px solid #e8ddbf;box-shadow:inset 0 0 0 1px rgba(255,255,255,.65),0 1px 0 #fff,0 6px 18px rgba(212,175,55,.15)}
+.btn--gold:hover{background:linear-gradient(180deg,#fffef8,#fff);box-shadow:inset 0 0 0 1px rgba(255,255,255,.85),0 1px 0 #fff,0 10px 24px rgba(212,175,55,.25);transform:translateY(-1px)}
+.btn--ghost{background:#fff;border:1px solid #efe7d7}
+.contact-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+/* Hero minimal */
+.hero{background:#fff}
+.hero__wrap{display:grid;grid-template-columns:1fr;gap:22px;align-items:center;padding:clamp(40px,7vw,84px) 0}
+.hero h1{font-size:clamp(30px,6vw,54px);margin-bottom:6px}
+.hero__lead{color:#4b5563;font-size:clamp(16px,2.3vw,20px)}
+.hero__media{position:relative;border:1px solid #efe7d7;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow)}
+.hero__media img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (min-width:900px){.hero__wrap{grid-template-columns:1.05fr .95fr}}
+
+/* Seções */
+.section{padding:56px 0}
+.section h2{font-size:clamp(24px,4.6vw,36px);margin-bottom:6px}
+.section p.muted{color:var(--muted)}
+
+/* Serviços (SVGs finos) */
+.services{display:grid;gap:18px;margin-top:16px}
+@media (min-width:900px){.services{grid-template-columns:repeat(3,1fr)}}
+.service{display:flex;gap:14px;align-items:flex-start;border:1px solid #efe7d7;border-radius:16px;padding:16px;background:#fff}
+.service svg{width:42px;height:42px;flex:0 0 42px;border-radius:12px;padding:8px;background:linear-gradient(180deg,#fff,#faf3dc);border:1px solid #eadfae}
+
+/* Quem somos + carrossel */
+.about{display:grid;gap:18px;align-items:center}
+@media (min-width:980px){.about{grid-template-columns:1.05fr .95fr}}
+
+.carousel{
+  position:relative;
+  border:1px solid #efe7d7;
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+
+  /* FIX: garante altura mesmo antes das imagens carregarem */
+  aspect-ratio: 4 / 3;
+  min-height: 280px;
+}
+.carousel__track{position:relative;width:100%;height:100%}
+.carousel__slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+.carousel__slide[aria-hidden="false"]{opacity:1}
+.carousel img{width:100%;height:100%;object-fit:cover}
+.carousel__dots{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:flex;gap:6px}
+.carousel__dots button{width:7px;height:7px;border-radius:999px;border:1px solid #eadfae;background:#fff;opacity:.7}
+.carousel__dots button[aria-current="true"]{background:var(--gold);opacity:1}
+
+/* Depoimentos */
+.testi {
+  position: relative;
+  border: 1px solid #efe7d7;
+  border-radius: 18px;             /* leve aumento no raio */
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+  overflow: hidden;
+  max-width: 700px;                /* 🔹 estica o card */
+  margin: 0 auto;                  /* centraliza */
+}
+
+.testi__viewport {
+  position: relative;
+  min-height: 260px;               /* 🔹 mais altura para respirar */
+}
+
+.testi__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .5s ease;
+  padding: 32px 38px;              /* 🔹 mais espaço interno */
+}
+
+.testi__slide[aria-hidden="false"] {
+  opacity: 1;
+}
+
+.testi__quote {
+  font-size: 19px;
+  line-height: 1.7;
+  word-break: break-word;
+  color: #222;
+}
+
+.testi__meta {
+  margin-top: 14px;
+  color: #555;
+  font-size: 15px;
+}
+
+.testi__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.testi__dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid #eadfae;
+  background: #fff;
+  opacity: .7;
+  transition: all .3s ease;
+}
+
+.testi__dots button[aria-current="true"] {
+  background: var(--gold);
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  margin-bottom: 10px;
+}
+.stars svg {
+  width: 17px;
+  height: 17px;
+  fill: #d4af37;
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .testi {
+    max-width: 92vw;               /* ocupa quase toda a largura */
+    border-radius: 16px;
+  }
+  .testi__slide {
+    padding: 22px 24px;
+  }
+  .testi__quote {
+    font-size: 17px;
+  }
+}
+
+
+
+/* Equipe (Profissionais) */
+.team {
+  display: grid;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.pro-card {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 14px;
+  align-items: center;
+  border: 1px solid #efe7d7;
+  border-radius: 16px;
+  background: #fff;
+  padding: 14px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+/* 🪄 Efeito ao passar o mouse */
+.pro-card:hover {
+  background: linear-gradient(180deg, #fffbe8, #fff4cc);
+  border-color: #d4af37;
+  box-shadow: 0 10px 22px rgba(212, 175, 55, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Suaviza a transição da imagem também */
+.pro-card figure {
+  margin: 0;
+  transition: transform 0.25s ease;
+}
+
+.pro-card:hover figure {
+  transform: scale(1.05);
+}
+
+/* Foto das profissionais — ajuste automático sem distorção */
+.pro-photo{
+  width: 88px;
+  height: 88px;
+  border-radius: 12px;          /* mude para 50% se quiser circular */
+  border: 1px solid #eadfae;
+  object-fit: cover;            /* ⭐️ corta para preencher sem distorcer */
+  object-position: center;      /* centraliza o corte */
+  background: #fff;             /* fundo neutro por trás da foto */
+  display: block;
+}
+
+/* (opcional) se quiser que o tamanho escale em layouts maiores */
+@media (min-width: 1200px){
+  .pro-photo{ width: 96px; height: 96px; }
+}
+
+/* Metadados */
+.pro-meta b {
+  font-size: 17px;
+  transition: color 0.25s ease;
+}
+.pro-meta small {
+  display: block;
+  color: var(--muted);
+  transition: color 0.25s ease;
+}
+
+/* 🪄 Texto dourado quando hover */
+.pro-card:hover b,
+.pro-card:hover small {
+  color: #a07400;
+}
+
+@media (min-width: 860px) {
+  .team {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .team {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* FAQ */
+.faq{display:grid;gap:10px}
+.faq details{border:1px solid #eadfae;border-radius:14px;background:linear-gradient(180deg,#fffef8,#fff);padding:0}
+.faq summary{cursor:pointer;padding:14px 16px;font-weight:700}
+.faq .ans{padding:0 16px 14px;color:#555}
+
+/* Contato */
+.grid-2{display:grid;gap:18px}
+@media (min-width:900px){.grid-2{grid-template-columns:1fr 1fr}}
+.map{border:1px solid #efe7d7;border-radius:16px;overflow:hidden}
+/* Endereço */
+.address-box {
+  margin: 18px 0 28px 0;
+  line-height: 1.6;
+  font-style: normal;
+  color: #333;
+  background: #fffdf5;
+  border-left: 3px solid var(--gold);
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.address-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(212,175,55,0.15);
+}
+/* Mapa responsivo */
+.map-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 proporção */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.map-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .map-wrapper {
+    padding-bottom: 65%; /* proporção mais alta no mobile */
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .address-box {
+    font-size: 15px;
+    padding: 10px 14px;
+    text-align: left;
+  }
+}
+
+/* Footer */
+.footer{border-top:1px solid #efe7d7;background:#fff}
+.footer .wrap{padding:22px 0;color:#78716c;text-align:center}
+
+/* Acessibilidade */
+a,button{outline:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:10px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ===== Layout de Contato ===== */
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 36px;
+}
+
+.contato-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Mapa lateral elegante */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.map-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 860px) {
+  .contato-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-wrapper {
+    height: 280px;
+    margin-top: 16px;
+  }
+}
+/* ===== BOTÃO FLUTUANTE DO WHATSAPP — ELEGANTE E MINIMALISTA ===== */
+.btn-whats-float {
+  position: fixed;
+  right: 26px; /* leve recuo lateral */
+  bottom: calc(26px + env(safe-area-inset-bottom, 0)); /* respeita notch */
+  background: #D4AF37; /* dourado ouro */
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 10px 16px; /* mais fino */
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 18px rgba(212,175,55,0.25);
+  transition: all .25s ease;
+  z-index: 99;
+  backdrop-filter: blur(2px);
+  animation: whats-pulse 3s ease-out infinite;
+}
+
+.btn-whats-float:hover {
+  background: #c9a032; /* tom ligeiramente mais escuro */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212,175,55,0.35);
+}
+
+/* Ícone do WhatsApp */
+.icon-whats {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
+/* Texto */
+.whats-text {
+  opacity: 1;
+  white-space: nowrap;
+}
+
+/* 📱 MOBILE */
+@media (max-width:600px){
+  .btn-whats-float {
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0));
+    padding: 9px 14px;
+    font-size: 13.5px;
+    gap: 6px;
+  }
+  .icon-whats { width: 17px; height: 17px; }
+}
+
+/* ✨ Animação de brilho dourado leve */
+@keyframes whats-pulse {
+  0%   { box-shadow: 0 4px 18px rgba(212,175,55,0.25); }
+  50%  { box-shadow: 0 8px 28px rgba(212,175,55,0.4); }
+  100% { box-shadow: 0 4px 18px rgba(212,175,55,0.25); }
+}
+/* ===== BOTÃO FLUTUANTE COM TOOLTIP ===== */
+.btn-whats-float {
+  position: fixed;
+  right: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0));
+  background: #D4AF37;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(212,175,55,0.3);
+  transition: all .25s ease;
+  z-index: 999;
+  animation: whats-pulse 3s ease-in-out infinite;
+}
+
+.btn-whats-float:hover {
+  background: #c9a032;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(212,175,55,0.35);
+}
+
+/* Ícone */
+.icon-whats {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+}
+
+/* Tooltip (mensagem "Agendar agora") */
+.tooltip-whats {
+  position: absolute;
+  right: 60px;
+  bottom: 50%;
+  transform: translateY(50%);
+  background: #fff;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .25s ease;
+  white-space: nowrap;
+}
+
+/* Seta do tooltip */
+.tooltip-whats::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: #fff;
+}
+
+/* Aparece ao passar o mouse */
+.btn-whats-float:hover .tooltip-whats {
+  opacity: 1;
+  right: 70px;
+}
+
+/* ✨ Animação suave */
+@keyframes whats-pulse {
+  0%   { box-shadow: 0 8px 24px rgba(212,175,55,.3); }
+  50%  { box-shadow: 0 10px 32px rgba(212,175,55,.45); }
+  100% { box-shadow: 0 8px 24px rgba(212,175,55,.3); }
+}
+
+/* 📱 MOBILE — tooltip aparece fixo acima */
+@media (max-width: 600px) {
+  .btn-whats-float {
+    width: 50px;
+    height: 50px;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0));
+  }
+
+  .tooltip-whats {
+    right: 50%;
+    bottom: 60px;
+    transform: translateX(50%);
+    opacity: 0;
+  }
+
+  .btn-whats-float:active .tooltip-whats,
+  .btn-whats-float:focus .tooltip-whats {
+    opacity: 1;
+  }
+}
+/* Anel dourado (afinamos o aro branco interno) */
+.logo__circle{
+  /* ...suas propriedades atuais... */
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.65),  /* antes estava 2px */
+    0 2px 6px rgba(0,0,0,.05);
+}
+
+/* A imagem da logo preenche mais o círculo */
+.logo__img{
+  width: 92%;   /* antes ~70–75% */
+  height: 92%;
+  object-fit: contain;
+  border-radius: 50%;
+  background:#fff; /* mantém o fundo branco */
+}
