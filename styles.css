@@ -642,3 +642,37 @@ a,button{outline:none}
   border-radius: 50%;
   background:#fff; /* mantém o fundo branco */
 }
+/* Centraliza carrosséis no mobile e remove qualquer deslocamento lateral */
+@media (max-width: 768px){
+  /* layout de "Quem somos" em 1 coluna */
+  .about{ grid-template-columns: 1fr !important; }
+
+  /* garante que o carrossel fique realmente centralizado */
+  .about .carousel{
+    width: 100%;
+    max-width: 92vw;          /* respira nas bordas */
+    margin-inline: auto;      /* centraliza */
+  }
+
+  /* previne offsets por bordas/padding internos */
+  .carousel,
+  .carousel__track,
+  .carousel__slide{
+    left: 0; right: 0;        /* evita “puxar” para a direita */
+  }
+
+  /* dots centralizados (reforço) */
+  .carousel__dots{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* opcional: aplique também aos depoimentos para manter consistência */
+@media (max-width: 768px){
+  .testi{
+    max-width: 92vw;
+    margin-inline: auto;
+  }
+}
+
